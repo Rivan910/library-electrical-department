@@ -1,0 +1,1 @@
+<img src="{{ asset('images/indocement.png') }}" alt="Logo Indocement" {{ $attributes->merge(['class' => 'h-36 w-auto mx-auto mix-blend-multiply']) }}>

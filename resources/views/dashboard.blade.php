@@ -3,7 +3,7 @@
 @section('title', 'Library Electrical P611')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}?v=1">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}?v=3">
 @endpush
 
 @section('content')
@@ -55,33 +55,38 @@
         </div>
     </header>
 
-    <!-- 4 SUMMARY KPI CARDS -->
+    <!-- 3 SUMMARY KPI CARDS -->
     <section class="wtl-kpi-grid">
         <div class="wtl-kpi-card wtl-kpi-blue">
-            <div>
-                <div class="wtl-kpi-num">{{ number_format($stats['total_documents']) }}</div>
+            <div class="wtl-kpi-head">
+                <span class="wtl-kpi-dot"></span>
                 <p class="wtl-kpi-title">Total Documents</p>
+            </div>
+            <div class="wtl-kpi-body">
+                <span class="wtl-kpi-num">{{ number_format($stats['total_documents']) }}</span>
+                <span class="wtl-kpi-unit">documents registered</span>
             </div>
         </div>
 
         <div class="wtl-kpi-card wtl-kpi-green">
-            <div>
-                <div class="wtl-kpi-num">{{ number_format($stats['available']) }}</div>
+            <div class="wtl-kpi-head">
+                <span class="wtl-kpi-dot"></span>
                 <p class="wtl-kpi-title">Available</p>
+            </div>
+            <div class="wtl-kpi-body">
+                <span class="wtl-kpi-num">{{ number_format($stats['available']) }}</span>
+                <span class="wtl-kpi-unit">ready in storage</span>
             </div>
         </div>
 
         <div class="wtl-kpi-card wtl-kpi-amber">
-            <div>
-                <div class="wtl-kpi-num">{{ $stats['racks'] }}</div>
+            <div class="wtl-kpi-head">
+                <span class="wtl-kpi-dot"></span>
                 <p class="wtl-kpi-title">Racks</p>
             </div>
-        </div>
-
-        <div class="wtl-kpi-card wtl-kpi-purple">
-            <div>
-                <div class="wtl-kpi-num">{{ number_format($stats['manuals_as_built']) }}</div>
-                <p class="wtl-kpi-title">Manuals &amp; As-Built</p>
+            <div class="wtl-kpi-body">
+                <span class="wtl-kpi-num">{{ $stats['racks'] }}</span>
+                <span class="wtl-kpi-unit">active rack locations</span>
             </div>
         </div>
     </section>
